@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(:version => 20130630150836) do
 
   create_table "photos", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string   "name",             :default => "My Pic"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "pic_file_name"
     t.string   "pic_content_type"
     t.integer  "pic_file_size"
