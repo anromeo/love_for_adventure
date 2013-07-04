@@ -12,6 +12,8 @@ gem 'delayed_job_active_record'
 gem 'foreman'
 gem 'rmagick'
 gem 'paperclip-aws'
+gem 'devise', '2.1.1'
+gem 'cancan', '1.6.7'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
