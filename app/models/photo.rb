@@ -13,4 +13,6 @@ class Photo < ActiveRecord::Base
 
   process_in_background :pic
 
+  belongs_to :mem
+  belongs_to :user
 end
