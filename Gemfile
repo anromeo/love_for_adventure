@@ -6,7 +6,9 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 
+gem 'delayed_paperclip', :git => "https://github.com/jrgifford/delayed_paperclip"
 gem 'aws-sdk'
+gem 'delayed_job_active_record'
 gem 'foreman'
 gem 'rmagick'
 gem 'paperclip-aws'

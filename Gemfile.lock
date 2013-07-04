@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/jrgifford/delayed_paperclip
+  revision: 9c2afd91193b5cd409b8cc34768e6a0b68eed1d5
+  specs:
+    delayed_paperclip (2.6.0.0)
+      paperclip (>= 3.3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -71,6 +78,11 @@ GEM
       debugger-ruby_core_source (~> 1.2.1)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.3)
+    delayed_job (3.0.5)
+      activesupport (~> 3.0)
+    delayed_job_active_record (0.4.4)
+      activerecord (>= 2.1.0, < 4)
+      delayed_job (~> 3.0)
     diff-lcs (1.2.4)
     dotenv (0.8.0)
     dotenv-rails (0.8.0)
@@ -220,6 +232,8 @@ DEPENDENCIES
   capybara-webkit (~> 1.0.0)
   coffee-rails (~> 3.2.1)
   database_cleaner (~> 1.0.1)
+  delayed_job_active_record
+  delayed_paperclip!
   dotenv-rails
   email_spec (= 1.2.1)
   factory_girl_rails (~> 4.0)
