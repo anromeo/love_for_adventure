@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(:version => 20130704231547) do
 
   create_table "photos", :force => true do |t|
     t.string   "name",             :default => "My Pic"
+    t.integer  "memid"
+    t.integer  "userid"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "pic_file_name"

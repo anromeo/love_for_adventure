@@ -11,7 +11,7 @@ Love::Application.routes.draw do
   resources :bls
 
 
-  get "user/index"
+  get "admin/users/index"
 
   devise_for :users
 
