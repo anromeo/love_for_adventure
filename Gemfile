@@ -4,15 +4,18 @@ ruby "2.0.0"
 
 gem 'rails', '3.2.13'
 
-gem 'delayed_paperclip'
+gem 'sqlite3'
+
 gem 'aws-sdk'
-gem 'delayed_job_active_record'
 gem 'foreman'
+gem 'rmagick'
+gem 'paperclip-aws'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'jquery-fileupload-rails'
 end
 
 gem 'jquery-rails'
