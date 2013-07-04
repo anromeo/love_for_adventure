@@ -4,9 +4,7 @@ class Photo < ActiveRecord::Base
   has_attached_file :pic, styles: { small: "150x150>", medium: "400x400>"},
                           #:convert_options => { :all => "-blue-shift 1.5" },
                           :storage => :s3,
-                          :s3_credentials => "#{Rails.root}/config/s3_credentials.yml",
-                          #:s3_endpoint => 'adventure-memories.s3-website-us-west-2.amazonaws.com',
-                          :bucket => "adventure-memories"
+                          :s3_credentials => "#{Rails.root}/config/s3_credentials.yml",                          :bucket => "adventure-memories"
                           #url: "/:attachment/:id/:style/:basename.:extension"
                           #path: ":rails_root/public/:attachment/:id/:style/:basename.:extension"
 

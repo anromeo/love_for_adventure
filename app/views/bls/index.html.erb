@@ -1,0 +1,29 @@
+<h1>Listing bls</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Item</th>
+    <th>Rank</th>
+    <th>Mem</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bls.each do |bl| %>
+  <tr>
+    <td><%= bl.user_id %></td>
+    <td><%= bl.item %></td>
+    <td><%= bl.rank %></td>
+    <td><%= bl.mem_id %></td>
+    <td><%= link_to 'Show', bl %></td>
+    <td><%= link_to 'Edit', edit_bl_path(bl) %></td>
+    <td><%= link_to 'Destroy', bl, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bl', new_bl_path %>

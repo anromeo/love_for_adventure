@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @mem.title %>
+</p>
+
+<p>
+  <b>Memory:</b>
+  <%= @mem.memory %>
+</p>
+
+
+<%= link_to 'Edit', edit_mem_path(@mem) %> |
+<%= link_to 'Back', mems_path %>

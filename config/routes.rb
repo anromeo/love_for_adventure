@@ -1,4 +1,16 @@
 Love::Application.routes.draw do
+  resources :comments
+
+
+  resources :followers
+
+
+  resources :mems
+
+
+  resources :bls
+
+
   get "user/index"
 
   devise_for :users

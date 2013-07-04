@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @bl.user_id %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%= @bl.item %>
+</p>
+
+<p>
+  <b>Rank:</b>
+  <%= @bl.rank %>
+</p>
+
+<p>
+  <b>Mem:</b>
+  <%= @bl.mem_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_bl_path(@bl) %> |
+<%= link_to 'Back', bls_path %>
