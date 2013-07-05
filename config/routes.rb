@@ -1,7 +1,7 @@
 Love::Application.routes.draw do
 
   authenticated do
-    root to: "mems#index"
+    root to: "dashboard#index"
   end
 
   root to: "home#index"
