@@ -1,8 +1,12 @@
 class PhotosController < ApplicationController
+  before_filter :find_mem
+  before_filter :find_photo, except: [:index,
+                                      :new,
+                                      :create]
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all
+    @photos = @mem.photos.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,8 +17,6 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
-    @photo = Photo.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @photo }
@@ -24,7 +26,7 @@ class PhotosController < ApplicationController
   # GET /photos/new
   # GET /photos/new.json
   def new
-    @photo = Photo.new
+    @photo = @mem.photos.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,19 +36,18 @@ class PhotosController < ApplicationController
 
   # GET /photos/1/edit
   def edit
-    @photo = Photo.find(params[:id])
   end
 
   # POST /photos
   # POST /photos.json
   def create
-    @photo = Photo.new(params[:photo])
+    @photo = @mem.photos.build(params[:photo])
 
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+        format.html { redirect_to [@mem, @photo], notice: 'Photo was successfully created.' }
         format.js
-        format.json { render json: @photo, status: :created, location: @photo }
+        format.json { render json: [@mem, @photo], status: :created, location: @photo }
       else
         format.html { render action: "new" }
         format.js
@@ -58,8 +59,6 @@ class PhotosController < ApplicationController
   # PUT /photos/1
   # PUT /photos/1.json
   def update
-    @photo = Photo.find(params[:id])
-
     respond_to do |format|
       if @photo.update_attributes(params[:photo])
         format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
@@ -74,12 +73,21 @@ class PhotosController < ApplicationController
   # DELETE /photos/1
   # DELETE /photos/1.json
   def destroy
-    @photo = Photo.find(params[:id])
     @photo.destroy
 
     respond_to do |format|
       format.html { redirect_to photos_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def find_mem
+    @mem = Mem.find(params[:mem_id])
+  end
+
+  def find_photo
+    @photo = @mem.photos.find(params[:id])
   end
 end

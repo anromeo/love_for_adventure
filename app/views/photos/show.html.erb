@@ -11,5 +11,5 @@
   <%= image_tag @photo.pic.url(:medium) %>
 </p>
 
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<%= link_to 'Edit', edit: [@mem, @photo] %> |
+<%= link_to 'Back', mem_photos_path(@mem) %>

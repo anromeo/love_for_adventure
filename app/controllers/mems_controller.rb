@@ -14,10 +14,13 @@ class MemsController < ApplicationController
   # GET /mems/1.json
   def show
     @mem = Mem.find(params[:id])
+    @photo = @mem.photos.build
+    @photos = @mem.photos.all.reverse
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @mem }
+      format.js
     end
   end
 
@@ -25,6 +28,7 @@ class MemsController < ApplicationController
   # GET /mems/new.json
   def new
     @mem = Mem.new
+    @photo = @mem.photos.build
 
     respond_to do |format|
       format.html # new.html.erb
