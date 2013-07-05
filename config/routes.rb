@@ -1,5 +1,9 @@
 Love::Application.routes.draw do
 
+  authenticated do
+    root to: "mems#index"
+  end
+
   root to: "home#index"
 
   resources :comments

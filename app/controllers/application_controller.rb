@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     if request.referer == sign_in_url
       super
     else
-      mems_path
+      root_path
     end
   end
 
