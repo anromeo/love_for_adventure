@@ -26,16 +26,33 @@
         </div>
       </div>
     </header>
-    <div id="main">
-      <% flash.each do |key, value| %>
-        <div class='flash' id='<%= key %>'>
-          <div id="close-notice">
-            x
+    <div id="content">
+      <div id="main-menu">
+        <a href="#" id="main-menu-toggle">
+          >
+        </a>
+        <table width="150px">
+          <tr>
+            <td width="50px">
+              ME!
+            </td>
+            <td width="150px" class="toggle">
+              <%= link_to "Me", url_for(params.merge(users: "me")), class: "main-menu-links" %>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="main">
+        <% flash.each do |key, value| %>
+          <div class='flash' id='<%= key %>'>
+            <div id="close-notice">
+              x
+            </div>
+            <%= value %>
           </div>
-          <%= value %>
-        </div>
-      <% end %>
-      <%= yield %>
+        <% end %>
+        <%= yield %>
+      </div>
     </div>
   </div>
   <footer>

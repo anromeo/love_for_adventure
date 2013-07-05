@@ -3,9 +3,25 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
+  #dropdown
   $("#header-dropdown-toggle").click (event)->
     event.preventDefault()
     $("#header-dropdown-div-inner").slideToggle(700)
+
+  #main menu toggle
+  if $("#main-menu-toggle")
+    toggleState = true
+    $("#main-menu-toggle").on "click", (event)->
+      event.preventDefault()
+      if(toggleState)
+        $("#main-menu").animate({width: "50px"}, ->
+          $(".toggle").toggle())
+      else
+        $(".toggle").toggle()
+        $("#main-menu").animate({width: "150px"})
+      toggleState = !toggleState
+
+  #flash disappear
   $(".flash").delay(2000).fadeOut()
   if $("#close-notice")
     $("#close-notice").click ->

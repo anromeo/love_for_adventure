@@ -28,7 +28,6 @@ class MemsController < ApplicationController
   # GET /mems/new.json
   def new
     @mem = Mem.new
-    @photo = @mem.photos.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -48,6 +47,7 @@ class MemsController < ApplicationController
 
     respond_to do |format|
       if @mem.save
+        @mem.update_attribute(:user_id, current_user.id)
         format.html { redirect_to @mem, notice: 'Mem was successfully created.' }
         format.json { render json: @mem, status: :created, location: @mem }
       else
