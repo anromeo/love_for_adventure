@@ -15,6 +15,7 @@ gem 'paperclip-aws'
 gem 'devise', '2.1.1'
 gem 'cancan', '1.6.7'
 gem 'fastimage'
+gem 'fakeweb'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
