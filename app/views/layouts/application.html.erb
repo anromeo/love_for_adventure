@@ -9,14 +9,37 @@
 <body>
   <div id="wrap">
     <header>
-
+      Love for Adventure
+      <div id="header-dropdown-div-outer">
+        <a href="#" id="header-dropdown-toggle">
+          Options
+        </a>
+        <div id="header-dropdown-div-inner">
+          <ul id="header-dropdown-list">
+            <li>
+              <%= link_to "Edit Account", edit_user_registration_path(current_user), class: "header-dropdown-links" %>
+            </li>
+            <li>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "header-dropdown-links" %>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
     <div id="main">
+      <% flash.each do |key, value| %>
+        <div class='flash' id='<%= key %>'>
+          <div id="close-notice">
+            x
+          </div>
+          <%= value %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
   </div>
   <footer>
-    Created with Love by Brothers Anthony and Philip Zullo
+    &copy; Created with Love by Brothers Anthony and Philip Zullo
   </footer>
 </body>
 </html>
