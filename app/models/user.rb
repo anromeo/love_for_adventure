@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
-  has_many :mems, dependent: :delete_all
-  has_many :photos, dependent: :delete_all
-  has_many :tag, dependent: :delete_all
+  has_many :mems, dependent: :destroy
+  has_many :photos, dependent: :destroy
+  has_many :tag, dependent: :destroy
 end

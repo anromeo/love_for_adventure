@@ -16,6 +16,5 @@
 <div id="memPics">
   <% @photos.each do |photo| %>
     <%= image_tag photo.pic.url(:medium) %>
-    <%= FastImage.size(photo.pic.url(:medium)) %>
   <% end %>
 </div>
