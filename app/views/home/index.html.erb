@@ -1,1 +1,19 @@
-<%= render "invite_requests/form" %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love for Adventure</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% @photos.each do |photo| %>
+    <div class="photos-reappear">
+      <%= image_tag photo.pic.url(:medium) %>
+    </div>
+  <% end %>
+  <div id="signin-div">
+    <%= render "invite_requests/form" %>
+  </div>
+</body>
+</html>
