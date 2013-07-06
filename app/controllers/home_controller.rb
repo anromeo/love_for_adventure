@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  layout false
+  layout "join"
 
   def index
     @invite_request = InviteRequest.new

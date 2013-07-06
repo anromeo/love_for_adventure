@@ -1,8 +1,6 @@
 class InviteRequestsController < ApplicationController
-  layout false
+  layout "join"
 
-  def index
-  end
   def sent
   end
 
@@ -19,9 +17,13 @@ class InviteRequestsController < ApplicationController
         }
         format.js
       else
-        flash[:notice] = "Please enter an email"
+        @message = if params[:invite_request][:email].blank?
+                      "Enter an email address below."
+                    else
+                      "That email is already in our system. We'll send you an invite as soon as we can."
+                    end
         format.html{
-          redirect_to root_path
+          redirect_to root_path, notice: @message
         }
         format.js
         end

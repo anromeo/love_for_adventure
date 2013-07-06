@@ -1,1 +1,9 @@
-$("#signin-div").text("Thanks!  We'll send you a request soon!")
+<% if @invite_request.save %>
+  $("#signin-div").text("Thanks!  We'll send you a request soon!")
+<% else %>
+  $("#signin-div").prepend("<div class='flash'><div id='close-notice'>x</div><%= j @message %></div>");
+  $(".flash").delay(2000).fadeOut();
+  $("#close-notice").on("click", function(){
+    $(".flash").hide();
+  })
+<% end %>

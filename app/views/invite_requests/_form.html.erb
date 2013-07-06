@@ -1,10 +1,24 @@
+<% flash.each do |key, value| %>
+  <div class='flash' id='<%= key %>'>
+    <div id="close-notice">
+      x
+    </div>
+    <%= value %>
+  </div>
+<% end %>
 <h2>Request an Invite</h2>
 <%= form_for @invite_request, remote: true do |f| %>
-  <div>
-    <%= f.label :email, "Email" %>
-    <%= f.email_field :email %>
-  </div>
-  <div>
-    <%= f.submit "Request Invitation" %>
-  </div>
+  <table>
+    <tr>
+      <td>
+        <%= f.label :email, "Email" %>
+        <%= f.email_field :email %>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">
+        <%= f.submit "Request Invitation" %>
+      </td>
+    </tr>
+  </table>
 <% end %>

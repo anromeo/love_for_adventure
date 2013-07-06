@@ -27,5 +27,5 @@ $ ->
   #flash disappear
   $(".flash").delay(2000).fadeOut()
   if $("#close-notice")
-    $("#close-notice").click ->
+    $("#close-notice").on "click", ->
       $(".flash").hide()
