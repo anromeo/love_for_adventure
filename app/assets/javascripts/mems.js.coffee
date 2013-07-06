@@ -13,12 +13,15 @@ $ ->
     toggleState = true
     $("#main-menu-toggle").on "click", (event)->
       event.preventDefault()
+      menu_text = $(@)
       if(toggleState)
         $("#main-menu").animate({width: "50px"}, ->
           $(".toggle").toggle())
+        menu_text.text(">>")
       else
         $(".toggle").toggle()
         $("#main-menu").animate({width: "150px"})
+        menu_text.text("<<")
       toggleState = !toggleState
 
   #flash disappear

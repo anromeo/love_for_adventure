@@ -1,0 +1,5 @@
+<% @mems.each do|mem| %>
+  <% mem.photos.each do|photo| %>
+    <%= image_tag photo.pic.url(:medium) %>
+  <% end %>
+<% end %>

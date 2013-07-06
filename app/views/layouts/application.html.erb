@@ -9,6 +9,11 @@
 <body>
   <div id="wrap">
     <header>
+      <% if defined? @dashboard %>
+        Home
+      <% else %>
+        <%= link_to "Home", root_path, id: "header-home-link" %>
+      <% end %>
       Love for Adventure
       <div id="header-dropdown-div-outer">
         <a href="#" id="header-dropdown-toggle">
@@ -29,15 +34,79 @@
     <div id="content">
       <div id="main-menu">
         <a href="#" id="main-menu-toggle">
-          >
+          <<
         </a>
+        <p class="main-menu-title toggle">
+          <%= current_user.username %>
+        </p>
         <table width="150px">
           <tr>
             <td width="50px">
-              ME!
+              &nbsp;
             </td>
             <td width="150px" class="toggle">
-              <%= link_to "Me", url_for(params.merge(users: "me")), class: "main-menu-links" %>
+              <p class="main-menu-subtitle">
+                Filter Users
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to "ME!", url_for(params.merge(users: "me")), class: "main-menu-links" %>
+            </td>
+            <td class="toggle">
+              My Memories
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to "Followers", url_for(params.merge(users: "followers")), class: "main-menu-links" %>
+            </td>
+            <td class="toggle">
+              Friends
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to "Following", url_for(params.merge(users: "leaders")), class: "main-menu-links" %>
+            </td>
+            <td class="toggle">
+              Friends
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to "ALL", url_for(params.merge(users: "all")), class: "main-menu-links" %>
+            </td>
+            <td class="toggle">
+              Everyone
+            </td>
+          </tr>
+        </table>
+        <table width="150px">
+          <tr>
+            <td width="50px">
+              &nbsp;
+            </td>
+            <td width="150px" class="toggle">
+              <p class="main-menu-subtitle">
+                Filter Stuff
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to "MEMs", url_for(params.merge(stuff: "mems")), class: "main-menu-links" %>
+            </td>
+            <td>
+              Memories
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to "BLs", url_for(params.merge(stuff: "bls")), class: "main-menu-links" %>
+            </td>
+            <td>Bucket Lists
             </td>
           </tr>
         </table>
