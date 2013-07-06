@@ -5,7 +5,10 @@ Love::Application.routes.draw do
   end
 
   root to: "home#index"
+  match "/signup" => "home#signup"
+  match "/sent" => "invite_requests#sent"
 
+  resources :invite_requests
   resources :comments
   resources :followers
 

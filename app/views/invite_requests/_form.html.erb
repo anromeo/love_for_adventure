@@ -1,0 +1,10 @@
+<h2>Request an Invite</h2>
+<%= form_for @invite_request, remote: true do |f| %>
+  <div>
+    <%= f.label :email, "Email" %>
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <%= f.submit "Request Invitation" %>
+  </div>
+<% end %>

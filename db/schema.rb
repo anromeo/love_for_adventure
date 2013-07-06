@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130706005607) do
+ActiveRecord::Schema.define(:version => 20130706042118) do
 
   create_table "bls", :force => true do |t|
     t.integer  "user_id"
@@ -53,6 +53,13 @@ ActiveRecord::Schema.define(:version => 20130706005607) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "leader"
+  end
+
+  create_table "invite_requests", :force => true do |t|
+    t.string   "email"
+    t.boolean  "invite_sent", :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "mems", :force => true do |t|
