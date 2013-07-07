@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   layout "join"
 
   def index
-    @photos = Photo.all
+    @photos = Photo.order(:created_at).limit(100)
     @invite_request = InviteRequest.new
     @disable_signin_link = true
     @disable_signup_link = true

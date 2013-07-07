@@ -29,3 +29,14 @@ $ ->
   if $("#close-notice")
     $("#close-notice").on "click", ->
       $(".flash").hide()
+
+  #front page disappear and reappear
+  if $(".photos-reappear")
+    $(".photos-reappear").hide()
+    $(".photos-reappear").each (i)->
+      this_width = $(@).width()
+      this_height = $(@).height()
+      left = Math.floor(Math.random() * ($(window).width() - this_width))
+      top = Math.floor(Math.random() * ($(window).height() - this_height))
+      $(@).css({"left": left, "top": top}).delay(1100*i).fadeIn 'slow', ->
+        $(@).fadeOut('slow')
