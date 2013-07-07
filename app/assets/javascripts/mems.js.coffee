@@ -36,7 +36,13 @@ $ ->
     $(".photos-reappear").each (i)->
       this_width = $(@).width()
       this_height = $(@).height()
-      left = Math.floor(Math.random() * ($(window).width() - this_width))
-      top = Math.floor(Math.random() * ($(window).height() - this_height))
-      $(@).css({"left": left, "top": top}).delay(1100*i).fadeIn 'slow', ->
+      signin_position = $(".signin-div")
+
+      random_left = Math.floor(Math.random() * ($(window).width() - this_width))
+      while signin_position.position("left") < random_left < signin_position.position("right")
+        random_left = Math.floor(Math.random() * ($(window).width() - this_width))
+      random_top = Math.floor(Math.random() * ($(window).height() - this_height))
+      while signin_position.position("top") < random_top < signin_position.position("bottom")
+        random_top = Math.floor(Math.random() * ($(window).height() - this_height))
+      $(@).css({"left": random_left, "top": random_top}).delay(1100*i).fadeIn 'slow', ->
         $(@).fadeOut('slow')
