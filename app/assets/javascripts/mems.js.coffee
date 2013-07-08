@@ -36,9 +36,29 @@ $ ->
     $(".photos-reappear").each (i)->
       this_width = $(@).width()
       this_height = $(@).height()
-      signin_position = $(".signin-div")
+      splash_image_position = $("#splash-image")
 
       random_left = Math.floor(Math.random() * ($(window).width() - this_width - 335) + 335)
       random_top = Math.floor(Math.random() * ($(window).height() - this_height - 25))
-      $(@).css({"left": random_left, "top": random_top}).delay(1100*i).fadeIn 'slow', ->
-        $(@).fadeOut('slow')
+      if this_width == 300 & this_height > 200
+        $(@).css({"left": random_left, "top": random_top}).delay(1100*i).fadeIn 'slow', ->
+          $(@).fadeOut('slow')
+
+    $(".photos-reappear").each (i)->
+      this_width = $(@).width()
+      this_height = $(@).height()
+      splash_image_position = $("#splash-image")
+
+      random_left = Math.floor(Math.random() * ($(window).width() - this_width - 335) + 335)
+      random_top = Math.floor(Math.random() * ($(window).height() - this_height - 25))
+      if this_width == 300 & this_height > 200
+        $(@).css({"left": random_left, "top": random_top}).delay(1100*i).fadeIn 'slow', ->
+          $(@).fadeOut('slow')
+
+    preload = (arrayofImages)->
+      $(arrayofImages).each ->
+        (new Image()).src = this
+
+    preload([
+      "/images/"
+    ])

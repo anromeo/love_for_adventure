@@ -8,21 +8,28 @@
 <body>
   <div id="wrap">
     <div id="main">
-      <% @photos.each do |photo| %>
-        <div class="photos-reappear">
-          <%= image_tag photo.pic.url(:medium), class: "photos-splash" %>
+      <div id="splash-left">
+        <% @photos.each do |photo| %>
+          <div class="photos-reappear">
+            <%= image_tag photo.pic.url(:medium), class: "photos-splash" %>
+          </div>
+        <% end %>
+        <div id="signin-div">
+          <%= render "invite_requests/form" %>
         </div>
-      <% end %>
-      <div id="signin-div">
-        <%= render "invite_requests/form" %>
+        <div id="welcome-splash">
+          <h1>
+            You've Found<br /> Love for Adventure!
+          </h1>
+          <p>
+            Love for Adventure is an exclusive invite only social network for people who love going on adventures.  Share your memories with your friends and family.
+          </p>
+        </div>
       </div>
-      <div id="welcome-splash">
-        <h1>
-          You've Found<br /> Love for Adventure!
-        </h1>
-        <p>
-          Love for Adventure is an exclusive invite only social network for people who love going on adventures.  Share your memories with your friends and family.
-        </p>
+      <div id="splash-right">
+        <div>
+          <%= image_tag("/assets/splash-image-small.png", id: "splash-image") %>
+        </div>
       </div>
     </div>
   </div>
