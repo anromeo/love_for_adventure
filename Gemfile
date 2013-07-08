@@ -4,7 +4,7 @@ ruby "2.0.0"
 
 gem 'rails', '3.2.13'
 
-gem 'sqlite3'
+gem 'pg', group: :production
 
 gem 'delayed_paperclip', :git => "https://github.com/jrgifford/delayed_paperclip"
 gem 'aws-sdk'
@@ -17,6 +17,7 @@ gem 'cancan', '1.6.7'
 gem 'fastimage'
 gem 'fakeweb'
 gem 'devise_invitable'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
@@ -35,6 +36,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'binding_of_caller'
   gem 'dotenv-rails'
+  gem 'sqlite3'
 end
 
 group :development do
