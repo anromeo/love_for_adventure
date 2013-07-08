@@ -6,18 +6,17 @@
     <%= value %>
   </div>
 <% end %>
-<h2>Request an Invite</h2>
+<h2 id="request-title">Request an Invite</h2>
 <%= form_for @invite_request, remote: true do |f| %>
-  <table>
+  <table width="100%">
     <tr>
-      <td>
-        <%= f.label :email, "Email" %>
-        <%= f.email_field :email %>
+      <td align="left">
+        <%= f.email_field :email, placeholder: "ENTER YOUR EMAIL" %>
       </td>
     </tr>
     <tr>
-      <td align="right">
-        <%= f.submit "Request Invitation" %>
+      <td align="left">
+        <%= f.submit "Request Invitation", id: "request-submit" %>
       </td>
     </tr>
   </table>
