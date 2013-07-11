@@ -14,15 +14,16 @@
   <% end %>
   <div id="pics">
   </div>
-  <div class="field">
+<!--  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+-->
   <div class="field">
     <%= f.file_field :pic %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "+ Photo", {id: "photo-form-submit"} %>
   </div>
 <% end %>
 <script id="template-upload" type="text/x-tmpl">

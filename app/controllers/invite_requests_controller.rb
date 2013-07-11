@@ -10,6 +10,8 @@ class InviteRequestsController < ApplicationController
 
   def create
     @invite_request = InviteRequest.new(params[:invite_request])
+    email = params[:invite_request][:email]
+    @invite_request['email'] = email.downcase
     respond_to do |format|
       if @invite_request.save
         format.html{

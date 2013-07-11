@@ -1,20 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @mem.title %>
+<div id="edit-div" class="fltrt">
+	<%= link_to 'Edit', edit_mem_path(@mem), class: "edit-link" %> |
+	<%= link_to 'Back', mems_path, class: "edit-link" %>
+</div>
+<h1 class="clear-fix">
+	<%= @mem.title %>
+</h1>
 </p>
-<p>
+<div class="words">
   <b>Memory:</b>
   <%= @mem.memory %>
-</p>
+</div>
 <%= render "photos/form" %>
-
-<%= link_to 'Edit', edit_mem_path(@mem) %> |
-<%= link_to 'Back', mems_path %>
-
-<div id="memPics">
+<div id="mem-div">
   <% @photos.each do |photo| %>
-    <%= image_tag photo.pic.url(:medium) %>
+    <div class="photos-div">
+    	<%= image_tag photo.pic.url(:medium) %>
+    	<div class="photos-info-div">
+    		Likes Dislikes
+    	</div>
+	</div>
   <% end %>
 </div>

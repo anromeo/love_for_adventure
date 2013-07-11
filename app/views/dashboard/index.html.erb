@@ -1,1 +1,3 @@
-<%= render @mems %>
+<% @mems.each do|mem| %>
+  <%= render mem %>
+<% end %>

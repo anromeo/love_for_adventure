@@ -1,5 +1,3 @@
-<% @mems.each do|mem| %>
-  <% mem.photos.each do|photo| %>
-    <%= image_tag photo.pic.url(:medium) %>
-  <% end %>
-<% end %>
+<div class="mems-div">
+  <%= link_to image_tag(mem.photos.first.pic.url(:medium), class: "mems-pics"), mem %>
+</div>

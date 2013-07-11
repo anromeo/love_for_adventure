@@ -55,10 +55,10 @@ $ ->
         $(@).css({"left": random_left, "top": random_top}).delay(1100*i).fadeIn 'slow', ->
           $(@).fadeOut('slow')
 
-    preload = (arrayofImages)->
-      $(arrayofImages).each ->
-        (new Image()).src = this
+    #preload = (arrayofImages)->
+    #  $(arrayofImages).each ->
+    #    (new Image()).src = this
 
-    preload([
-      "/images/"
-    ])
+    #preload([
+    #  "/images/"
+    #])
