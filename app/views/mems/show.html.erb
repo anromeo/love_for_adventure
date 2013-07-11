@@ -14,10 +14,18 @@
 <div id="mem-div">
   <% @photos.each do |photo| %>
     <div class="photos-div">
-    	<%= image_tag photo.pic.url(:medium) %>
+    	<%= image_tag photo.pic.url(:medium), class: "photos" %>
     	<div class="photos-info-div">
-    		Likes Dislikes
-    	</div>
+         <p>
+    		  <div class="fltlft">
+            Likes
+          </div>
+          <%= photo.name %>
+          <div class="fltrt">
+            Dislikes
+    	    </div>
+         </p>
+      </div>
 	</div>
   <% end %>
 </div>

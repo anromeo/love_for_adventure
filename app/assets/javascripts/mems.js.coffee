@@ -55,6 +55,11 @@ $ ->
         $(@).css({"left": random_left, "top": random_top}).delay(1100*i).fadeIn 'slow', ->
           $(@).fadeOut('slow')
 
+  if $(".photos-div")
+    $(".photos-div").on "mouseover", ->
+      $(@).children(".photos-info-div").slideDown("fast")
+    $(".photos-div").on "mouseout", ->
+      $(@).children(".photos-info-div").slideUp("fast")
     #preload = (arrayofImages)->
     #  $(arrayofImages).each ->
     #    (new Image()).src = this
