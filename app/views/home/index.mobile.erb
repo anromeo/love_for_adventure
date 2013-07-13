@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love for Adventure</title>
+  <%= stylesheet_link_tag    "/jqtouch/themes/css/jqtouch.css", "/jqtouch/themes/css/apple.css" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="wrap-splash">
+    <div id="main">
+      <div id="splash-left">
+        <% @photos.each do |photo| %>
+          <div class="photos-reappear">
+            <%= image_tag photo.pic.url(:medium), class: "photos-splash" %>
+          </div>
+        <% end %>
+        <div id="signin-div">
+          <%= render "invite_requests/form" %>
+        </div>
+        <div id="welcome-splash">
+          <h1>
+            You've Found<br /> Love for Adventure!
+          </h1>
+          <p>
+            Love for Adventure is an exclusive invite only social network for people who love going on adventures.  Share your memories with your friends and family.
+          </p>
+        </div>
+      </div>
+      <div id="splash-right">
+        <div>
+          <% splash_image = if mobile_device?
+                          "/assets/splash-image-small.png"
+                        else
+                          "/assets/splash-medium.png"
+                        end %>
+          <%= image_tag(splash_image, id: "splash-image") %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    &copy; Created with Love by Brothers
+    <a href="https://github.com/anromeo" class="footer-links">
+      Anthony</a>
+      and
+    <a href="https://www.facebook.com/philzullo/media_set?set=a.1738366557226.69664.1780505654&type=3" class="footer-links">
+      Philip Zullo</a>
+     with photos courtesy of
+    <a href="https://www.facebook.com/DigitalRiffRaff?fref=ts" class="footer-links">
+     Riff Raff
+    </a>
+  </footer>
+  <%= javascript_include_tag "/jqtouch/lib/jquery-1.7.min.js", "/jqtouch/jqtouch.min.js", "/javascript/mobile.js" %>
+</body>
+</html>

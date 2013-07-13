@@ -1,3 +1,36 @@
 // Place all the styles related to the mems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$align-mem-div: center
+$float-photos-div: none
+
+#mem-div
+  text-align: $align-mem-div
+#edit-div
+  margin: 0 30px 0 0
+a.edit-link:link,:visited
+
+a.edit-link:hover
+
+.photos
+  width: 100%
+.photos-div
+  width: 40%
+  display: inline-block
+  position: relative
+  margin: 0 0 0 0
+  padding: 0 0 0 0
+  line-height: 0
+  float: $float-photos-div
+  max-height: 300px
+  overflow: hidden
+.photos-info-div
+  display: none
+  position: absolute
+  bottom: 0
+  background-color: #000
+  color: #FFF
+  width: 90%
+  opacity: .7
+  padding: 0px 5% 5px 5%

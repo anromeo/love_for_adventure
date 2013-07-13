@@ -35,3 +35,6 @@ $ ->
       alert("#{data.files[0].name} failed to upload.")
       console.log("Upload failed:")
       console.log(data)
+
+  if $("#photo-form-submit")
+    $("#photo-form-submit").hide()

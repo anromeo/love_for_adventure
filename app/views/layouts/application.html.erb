@@ -3,7 +3,6 @@
 <head>
   <title>Love for Adventure</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -129,7 +128,22 @@
     </div>
   </div>
   <footer>
-    &copy; Created with Love by Brothers Anthony and Philip Zullo
+    &copy; Created with Love by Brothers
+    <a href="https://github.com/anromeo" class="footer-links">
+      Anthony</a>
+      and
+    <a href="https://www.facebook.com/philzullo/media_set?set=a.1738366557226.69664.1780505654&type=3" class="footer-links">
+      Philip Zullo</a>
+     with photos courtesy of
+    <a href="https://www.facebook.com/DigitalRiffRaff?fref=ts" class="footer-links">
+     Riff Raff
+    </a>
+    <% if mobile_device? %>
+      <%= link_to "Full Site", mobile: 0 %>
+    <% else %>
+      <%= link_to "Mobile Site", mobile: 1 %>
+    <% end %>
   </footer>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>

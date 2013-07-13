@@ -60,6 +60,12 @@ $ ->
       $(@).children(".photos-info-div").slideDown("fast")
     $(".photos-div").on "mouseout", ->
       $(@).children(".photos-info-div").slideUp("fast")
+
+  if $(".mems-pics")
+    $(".mems-pics").on "mouseover", ->
+      $(@).children(".photos-info-div").slideDown("fast")
+    $(".mems-pics").on "mouseout", ->
+      $(@).children(".photos-info-div").slideUp("fast")
     #preload = (arrayofImages)->
     #  $(arrayofImages).each ->
     #    (new Image()).src = this

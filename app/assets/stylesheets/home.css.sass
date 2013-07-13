@@ -12,7 +12,7 @@ footer
   margin-bottom: -25px
   min-height: 100%
 #wrap-splash
-  background-image: url("/images/splash-background.jpg")
+  background-color: #000
 #main
   overflow: auto
   padding-bottom: 25px
@@ -159,12 +159,18 @@ a.footer-links:hover
 
 // dashboard
 .mems-div
-  width: 150px 
-  height: 200px
-  overflow: hidden
+  width: 90%
+  overflow: auto
+.mems-inner-div
+  white-space: nowrap
 .mems-pics
-  width: 150px
-
+  height: 150px
+  max-height: 200px
+  overflow-x: auto
+  overflow-y: hidden
+.mem-photo-div
+  position: relative
+  display: inline-block
 // all css
 .fltlft
   float: left

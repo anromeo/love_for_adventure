@@ -6,6 +6,10 @@ class HomeController < ApplicationController
     @invite_request = InviteRequest.new
     @disable_signin_link = true
     @disable_signup_link = true
+#    respond_to do |format|
+#      format.html
+#      format.mobile
+#    end
     if current_user
       redirect_to mems_path
     end
