@@ -1,23 +1,35 @@
-<h2 class="mem-title">
-  <%= mem.title %>
-</h2>
-<div class="mems-div">
-  <div class="mems-inner-div">
-    <% mem.photos.each do |photo| %>
-      <div class="mem-photo-div">
-        <%= link_to image_tag(photo.pic.url(:medium), class: "mems-pics"), mem %>
-        <div class="photos-info-div">
-           <p>
-            <div class="fltlft">
-              Likes
-            </div>
-            <%= photo.name %>
-            <div class="fltrt">
-              Dislikes
-            </div>
-           </p>
+<div class="mem-all-div">
+  <h2 class="mem-title-splash">
+    <%= link_to mem.title, mem, class: "mem-title-link" %>
+  </h2>
+  <p class="mem-author"><%= mem.user.username %></p>
+  <div class="mems-previous-scroll">
+    <div class="mems-inner-arrow">
+      <
+    </div>
+  </div>
+  <div class="mems-next-scroll">
+    <div class="mems-inner-arrow">
+     >
+    </div>
+  </div>
+  <div class="mems-div">
+    <div class="mems-inner-div">
+      <% mem.photos.each do |photo| %>
+        <div class="mem-photo-div">
+          <%= image_tag(photo.pic.url(:medium), class: "mems-pics") %>
+          <div class="photos-info-div">
+             <p>
+              <div class="fltlft">
+                Likes
+              </div>
+              <div class="fltrt">
+                Dislikes
+              </div>
+             </p>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

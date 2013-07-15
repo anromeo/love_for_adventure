@@ -13,6 +13,7 @@
 <%= render "photos/form" %>
 <div id="mem-div">
   <% @photos.each do |photo| %>
+    <div class="photos-div">
     	<%= image_tag photo.pic.url(:medium), class: "photos" %>
     	<div class="photos-info-div">
          <p>
@@ -25,5 +26,6 @@
     	    </div>
          </p>
       </div>
+    </div>
   <% end %>
 </div>
