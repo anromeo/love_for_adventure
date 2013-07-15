@@ -71,47 +71,50 @@ $ ->
     scrolling_speed_fast = 1
     scrolling_speed_slow = 75
     previous_interval = ''
-    $(".mems-previous-scroll").on "mouseover", ->
-      mem_div = $(@).parent(".mem-all-div").children(".mems-div")
-      previous_interval =
-        setInterval(->
-          current_scroll = mem_div.scrollLeft()
-          mem_div.scrollLeft(current_scroll - 1)
-        , scrolling_speed_fast)
-    $(".mems-previous-scroll").on "mouseout", ->
-      clearInterval(previous_interval)
-
-    $(".mems-previous-scroll").on "mousedown", ->
-      mem_div = $(@).parent(".mem-all-div").children(".mems-div")
-      previous_interval =
-        setInterval(->
-          current_scroll = mem_div.scrollLeft()
-          mem_div.scrollLeft(current_scroll - 50)
-        , scrolling_speed_slow)
-    $(".mems-previous-scroll").on "mouseup", ->
-      clearInterval(previous_interval)
+    $(".mems-previous-scroll").on 
+      mouseover: ->
+        clearInterval(previous_interval)
+        mem_div = $(@).parent(".mem-all-div").children(".mems-div")
+        previous_interval =
+          setInterval(->
+            current_scroll = mem_div.scrollLeft()
+            mem_div.scrollLeft(current_scroll - 1)
+          , scrolling_speed_fast)
+      mousedown: ->
+        clearInterval(previous_interval)
+        mem_div = $(@).parent(".mem-all-div").children(".mems-div")
+        previous_interval =
+          setInterval(->
+            current_scroll = mem_div.scrollLeft()
+            mem_div.scrollLeft(current_scroll - 50)
+          , scrolling_speed_slow)
+      mouseup: ->
+        clearInterval(previous_interval)
+      mouseout: ->
+        clearInterval(previous_interval)
 
     next_interval = ''
-    $(".mems-next-scroll").on "mouseover", ->
-      mem_div = $(@).parent(".mem-all-div").children(".mems-div")
-      next_interval =
-        setInterval(->
-          current_scroll = mem_div.scrollLeft()
-          mem_div.scrollLeft(1 + current_scroll)
-        , scrolling_speed_fast)
-    $(".mems-next-scroll").on "mouseout", ->
-      clearInterval(next_interval)
-
-    $(".mems-next-scroll").on "mousedown", ->
-      mem_div = $(@).parent(".mem-all-div").children(".mems-div")
-      next_interval =
-        setInterval(->
-          current_scroll = mem_div.scrollLeft()
-          mem_div.scrollLeft(50 + current_scroll)
-        , scrolling_speed_slow)
-    $(".mems-next-scroll").on "mouseup", ->
-      clearInterval(next_interval)
-
+    $(".mems-next-scroll").on
+      mouseover: ->
+        clearInterval(next_interval)
+        mem_div = $(@).parent(".mem-all-div").children(".mems-div")
+        next_interval =
+          setInterval(->
+            current_scroll = mem_div.scrollLeft()
+            mem_div.scrollLeft(1 + current_scroll)
+          , scrolling_speed_fast)
+      mousedown: ->
+        clearInterval(next_interval)
+        mem_div = $(@).parent(".mem-all-div").children(".mems-div")
+        next_interval =
+          setInterval(->
+            current_scroll = mem_div.scrollLeft()
+            mem_div.scrollLeft(50 + current_scroll)
+          , scrolling_speed_slow)
+      mouseup: ->
+        clearInterval(next_interval)
+      mouseout: ->
+        clearInterval(next_interval)
 
     #preload = (arrayofImages)->
     #  $(arrayofImages).each ->
