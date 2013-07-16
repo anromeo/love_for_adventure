@@ -23,6 +23,9 @@
           <div id="header-dropdown-div-inner">
             <ul id="header-dropdown-list">
               <li>
+                <%= link_to "Add Collage", new_collage_path, class: "header-dropdown-links" %>
+              </li>
+              <li>
                 <%= link_to "Edit Account", edit_user_registration_path(current_user), class: "header-dropdown-links" %>
               </li>
               <li>
