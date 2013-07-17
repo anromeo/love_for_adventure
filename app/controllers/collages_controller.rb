@@ -8,7 +8,12 @@ class CollagesController < ApplicationController
     @collage = Collage.new(params[:collage])
     respond_to do |format|
       if @collage.save
+        @collage.user_id = current_user.id
+        format.html { redirect_to @collage}
+        format.js
       else
+        format.html
+        format.js
       end
     end
   end

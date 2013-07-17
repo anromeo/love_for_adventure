@@ -1,7 +1,11 @@
 <%= simple_form_for @collage do |f| %>
-  <%= f.submit "Continue" %>
-  <%= f.input :title %>
-  <%= f.input :description, as: :text, class: "collage-input" %>
+  <div class="fltrt">
+    <%= f.submit "Continue" %>
+  </div>
+  <%= f.label :title %>
+  <%= f.input :title, label: false %>
+  <%= f.label :description %>
+  <%= f.input :description, label: false, as: :text, class: "collage-input" %>
   <%= f.radio_button :layout, as: :radio_buttons %>
   Collage A
   <p class="clear-fix"></p>
