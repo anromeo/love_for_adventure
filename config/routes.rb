@@ -8,7 +8,9 @@ Love::Application.routes.draw do
   match "/signup" => "home#signup"
   match "/sent" => "invite_requests#sent"
 
-  resources :collages
+  resources :collages do
+    resources :collage_pics
+  end
   resources :invite_requests
   resources :comments
   resources :followers

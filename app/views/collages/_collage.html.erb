@@ -1,0 +1,13 @@
+<div class="collage">
+  <% n = 0 %>
+  <% 9.times.each do %>
+    <% n += 1 %>
+    <div id="position_<%= n %>" class="position">
+      <% if defined? @create_new_pics %>
+        <%= link_to "?", new_collage_collage_pic_path(@collage), class: "position-link" %>
+      <% else %>
+        <img src="" >
+      <% end %>
+    </div>
+  <% end %>
+</div>

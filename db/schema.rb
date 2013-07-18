@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715204722) do
+ActiveRecord::Schema.define(:version => 20130716031912) do
 
   create_table "bls", :force => true do |t|
     t.integer  "user_id"
@@ -21,6 +21,21 @@ ActiveRecord::Schema.define(:version => 20130715204722) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "collage_pics", :force => true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.integer  "left"
+    t.integer  "right"
+    t.integer  "top"
+    t.integer  "bottom"
+    t.string   "rotation"
+    t.integer  "collage_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "collage_pics", ["rotation"], :name => "index_collage_pics_on_rotation"
 
   create_table "collages", :force => true do |t|
     t.string   "title"

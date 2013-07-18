@@ -8,18 +8,5 @@
   <%= f.input :description, label: false, as: :text, class: "collage-input" %>
   <%= f.radio_button :layout, as: :radio_buttons %>
   Collage A
-  <p class="clear-fix"></p>
-  <div class="collage">
-    <% n = 0 %>
-    <% 5.times.each do %>
-      <div class="row">
-        <% 3.times.each do %>
-          <% n += 1 %>
-          <div id="position_<%= n %>" class="position">
-            <img src="" >
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <%= render "collage" %>
 <% end %>

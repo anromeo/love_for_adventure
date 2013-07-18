@@ -6,68 +6,84 @@ $margin-top: 5px
 $margin-sides: 5%
 $margin-gutter: .5%
 $border: 1px green solid
+$big-picture-height: 800px
 
+.collage-pic-select
+  height: 100px
+.collage-pic-select-div
+  background-color: #000
+  width: 100px
+  float: left
+  margin: 5px 5px 0 0
+  overflow: hidden
 .collage
   clear: both
 .position
   float: left
   height: 400px
   background-color: #000
+  color: #FFF
+  text-align: center
+  position: relative
+  font-size: 40px
+a.position-link:link,a.position-link:visited
+  color: #FFF
+  position: relative
+  top: 50%
+a.position-link:hover
+  color: #CCC
 #position_1
-  width: 30%
-  margin: $margin-top 0 0 $margin-sides
-  border-right: $border
+  width: 90%
+  margin: $margin-top $margin-sides 0 $margin-sides
   box-sizing: border-box
 #position_2
-  width: 30%
-  margin: $margin-top 0 0 0
+  width: 29.5%
+  margin: $margin-top $margin-gutter 0 $margin-sides
 #position_3
   width: 30%
-  margin: $margin-top $margin-sides 0 0
-  border-left: $border
-  box-sizing: border-box
+  margin: $margin-top 0 0 0
 #position_4
   width: 29.5%
-  margin: $margin-top $margin-gutter 0 $margin-sides
+  margin: $margin-top $margin-sides 0 $margin-gutter
 #position_5
-  width: 30%
-  margin: $margin-top 0 0 0
+  width: 60%
+  margin: $margin-top $margin-gutter 0 $margin-sides
 #position_6
   width: 29.5%
-  margin: $margin-top $margin-sides 0 $margin-gutter
+  margin: $margin-top $margin-sides 0 0
 #position_7
-  width: 30%
-  margin: $margin-top 0 0 $margin-sides
-  border-right: $border
-  box-sizing: border-box
+  width: 29.5%
+  margin: $margin-top $margin-gutter 0 $margin-sides
 #position_8
-  width: 30%
-  margin: $margin-top $margin-gutter 0 0
+  width: 60%
+  margin: $margin-top $margin-sides 0 0
+  height: $big-picture-height
+  float: right
 #position_9
   width: 29.5%
-  margin: $margin-top $margin-sides 0 0
-#position_10
-  width: 29.5%
   margin: $margin-top $margin-gutter 0 $margin-sides
-#position_11
-  width: 30%
-  margin: $margin-top 0 0 0
-  border-right: $border
-  box-sizing: border-box
-#position_12
-  width: 30%
-  margin: $margin-top $margin-sides 0 0
-#position_13
-  width: 29.5%
-  margin: $margin-top $margin-gutter 0 $margin-sides
-#position_14
-  width: 30%
-  margin: 0 0 0 0
-  border-right: $border
-  border-top: $border
-  box-sizing: border-box
-#position_15
-  width: 30%
-  margin: 0 $margin-sides 0 0
-  border-top: $border
-  box-sizing: border-box
+//#position_10
+//  width: 29.5%
+//  margin: $margin-top $margin-gutter 0 $margin-sides
+//#position_11
+//  width: 30%
+//  margin: $margin-top 0 0 0
+//  border-right: $border
+//  box-sizing: border-box
+//#position_12
+//  width: 30%
+//  margin: $margin-top $margin-sides 0 0
+//#position_13
+//  width: 29.5%
+//  margin: $margin-top $margin-gutter 0 $margin-sides
+//#position_14
+//  width: 30%
+//  margin: 0 0 0 0
+//  border-right: $border
+//  border-top: $border
+//  box-sizing: border-box
+//#position_15
+//  width: 30%
+//  margin: 0 $margin-sides 0 0
+//  border-top: $border
+//  box-sizing: border-box

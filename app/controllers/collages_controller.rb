@@ -9,10 +9,10 @@ class CollagesController < ApplicationController
     respond_to do |format|
       if @collage.save
         @collage.user_id = current_user.id
-        format.html { redirect_to @collage}
+        format.html { redirect_to collage_collage_pics_path(@collage)}
         format.js
       else
-        format.html
+        format.html { render action: "new", notice: "Sorry, there was a problems."}
         format.js
       end
     end

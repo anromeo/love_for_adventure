@@ -1,0 +1,6 @@
+<p>Please, select one of your pictures to add.</p>
+<% @potential_pics.each do |photo| %>
+  <div class="collage-pic-select-div">
+    <%= image_tag(photo.pic.url(:medium), class: "collage-pic-select") %>
+  </div>
+<% end %>

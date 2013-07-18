@@ -45,6 +45,7 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
+        @photo.update_attribute(:user_id, current_user.id)
         format.html { redirect_to [@mem, @photo], notice: 'Photo was successfully created.' }
         format.js
         format.json { render json: [@mem, @photo], status: :created, location: @photo }
