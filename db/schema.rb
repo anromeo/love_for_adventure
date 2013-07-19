@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716031912) do
+ActiveRecord::Schema.define(:version => 20130719060650) do
 
   create_table "bls", :force => true do |t|
     t.integer  "user_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20130716031912) do
     t.integer  "collage_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "photo_id"
   end
 
   add_index "collage_pics", ["rotation"], :name => "index_collage_pics_on_rotation"

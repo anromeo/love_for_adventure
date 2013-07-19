@@ -4,7 +4,9 @@
 
 
 $ ->
-  if $(".collage-pic-select-div")
-    $(".collage-pic-select-div").on "click", ->
-      $(".collage-pic-select-div").css("border", "none")
-      $(@).css("border", "green solid 5px")
+  if $(".collage-pic-select-div-inner")
+    $(".collage-pic-select-div-inner").on "click", ->
+      $(".collage-pic-select-div-inner").css("border", "none")
+      $this = $(@)
+      $this.css("border", "green solid 5px")
+      $this.parent(".collage-pic-select-div-outer").children(".collage-radio-button").prop("checked", true)

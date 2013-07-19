@@ -1,6 +1,12 @@
 <p>Please, select one of your pictures to add.</p>
-<% @potential_pics.each do |photo| %>
-  <div class="collage-pic-select-div">
-    <%= image_tag(photo.pic.url(:medium), class: "collage-pic-select") %>
-  </div>
+<%= simple_form_for [@collage, @collage_pic] do |f| %>
+  <%= f.submit "+ Photo" %>
+  <% @potential_pics.each do |photo| %>
+    <div class="collage-pic-select-div-outer">
+      <div class="collage-pic-select-div-inner">
+        <%= image_tag(photo.pic.url(:medium), class: "collage-pic-select") %>
+      </div><br />
+      <%= f.radio_button :photo_id, photo.id, class: "collage-radio-button" %>
+    </div>
+  <% end %>
 <% end %>
