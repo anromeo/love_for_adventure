@@ -3,7 +3,9 @@
   <% 9.times.each do %>
     <% n += 1 %>
     <div id="position_<%= n %>" class="position">
-      <% if defined? @create_new_pics %>
+      <% if @collage_pics[n].present? %>
+        <%= link_to image_tag(@collage_pic[n].photo.pic.url(:medium)), edit_collage_collage_pic_path(@collage), class: "collage-pic" %>
+      <% elsif defined? @create_new_pics %>
         <%= link_to "?", new_collage_collage_pic_path(@collage), class: "position-link" %>
       <% else %>
         <img src="" >

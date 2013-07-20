@@ -16,4 +16,5 @@ class Photo < ActiveRecord::Base
 
   belongs_to :mem
   belongs_to :user
+  has_one :collage_pic
 end

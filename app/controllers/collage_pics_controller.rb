@@ -6,8 +6,13 @@ class CollagePicsController < ApplicationController
   end
 
   def new
-    @collage_pic = @collage.collage_pics.build
-    @potential_pics = current_user.photos.all.reverse
+    if params[:position].present?
+      @position = params[:position]
+      @collage_pic = @collage.collage_pics.build
+      @potential_pics = current_user.photos.all.reverse
+    else
+      redirect_to @collage
+    end
   end
 
   def create
@@ -26,10 +31,12 @@ class CollagePicsController < ApplicationController
   end
 
   def show
+    @create_new_pics = "set"
     n = 0
+    @collage_pics = Array.new
     9.times.each do
       n += 1
-      @collage_pic[n] = @collage.collage_pics.where("position = ?", n)
+      @collage_pics[n] = @collage.collage_pics.where("position = ?", n)
     end
   end
 

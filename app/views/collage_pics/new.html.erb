@@ -7,6 +7,7 @@
         <%= image_tag(photo.pic.url(:medium), class: "collage-pic-select") %>
       </div><br />
       <%= f.radio_button :photo_id, photo.id, class: "collage-radio-button" %>
+      <% f.hidden_field :position, @position %>
     </div>
   <% end %>
 <% end %>
