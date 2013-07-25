@@ -1,1 +1,87 @@
-<%= render "collages/collage" %>
+<div class="collage">
+  <div id="position_1" class="position">
+    <% if @collage_pics1.present? %>
+      <%= link_to image_tag(@collage_pics1.photos.pic.url(:medium)), edit_collage_collage_pic_path(@collage), class: "collage-pic", position: 1 %>
+    <% elsif defined? @create_new_pics %>
+      <%= link_to "?", { new_collage_collage_pic_path(@collage), class: "position-link",:position: 1 } %>
+    <% else %>
+      <img src="" >
+    <% end %>
+  </div>
+  <div id="position_2" class="position">
+    <% if @collage_pics2.present? %>
+      <%= link_to image_tag(@collage_pics2.photos.pic.url(:medium)), edit_collage_collage_pic_path(@collage), class: "collage-pic", position: 2 %>
+    <% elsif defined? @create_new_pics %>
+      <%= link_to "?", new_collage_collage_pic_path(@collage), class: "position-link",
+      position: 2 %>
+    <% else %>
+      <img src="" >
+    <% end %>
+  </div>
+  <div id="position_3" class="position">
+    <% if @collage_pics3.present? %>
+      <%= link_to image_tag(@collage_pics3.photos.pic.url(:medium)), edit_collage_collage_pic_path(@collage), class: "collage-pic", position: 3 %>
+    <% elsif defined? @create_new_pics %>
+      <%= link_to "?", new_collage_collage_pic_path(@collage), class: "position-link",
+      position: 3 %>
+    <% else %>
+      <img src="" >
+    <% end %>
+  </div>
+  <div id="position_4" class="position">
+    <% if @collage_pics4.present? %>
+      <%= link_to image_tag(@collage_pics4.photos.pic.url(:medium)), edit_collage_collage_pic_path(@collage), class: "collage-pic", position: 4 %>
+    <% elsif defined? @create_new_pics %>
+      <%= link_to "?", new_collage_collage_pic_path(@collage), class: "position-link",
+      position: 4 %>
+    <% else %>
+      <img src="" >
+    <% end %>
+  </div>
+  <div id="position_5" class="position">
+    <% if @collage_pics5.present? %>
+      <%= link_to image_tag(@collage_pics5.photos.pic.url(:medium)), edit_collage_collage_pic_path(@collage), class: "collage-pic", position: 5 %>
+    <% elsif defined? @create_new_pics %>
+      <%= link_to "?", new_collage_collage_pic_path(@collage), class: "position-link",
+      position: 5 %>
+    <% else %>
+      <img src="" >
+    <% end %>
+  </div>
+  <div id="position_6" class="position">
+    <% if @collage_pics6.present? %>
+      <%= link_to image_tag(@collage_pics6.photos.pic.url(:medium)), edit_collage_collage_pic_path(@collage), class: "collage-pic", position: 6 %>
+    <% elsif defined? @create_new_pics %>
+      <%= link_to "?", new_collage_collage_pic_path(@collage), class: "position-link", position: 6 %>
+    <% else %>
+      <img src="" >
+    <% end %>
+  </div>
+  <div id="position_7" class="position">
+    <% if @collage_pics7.present? %>
+      <%= link_to image_tag(@collage_pics7.photos.pic.url(:medium)), edit_collage_collage_pic_path(@collage), class: "collage-pic", position: 7 %>
+    <% elsif defined? @create_new_pics %>
+      <%= link_to "?", new_collage_collage_pic_path(@collage), class: "position-link", position: 7 %>
+    <% else %>
+      <img src="" >
+    <% end %>
+  </div>
+  <div id="position_8" class="position">
+    <% if @collage_pics8.present? %>
+      <%= link_to image_tag(@collage_pics8.photos.pic.url(:medium)), edit_collage_collage_pic_path(@collage), class: "collage-pic", position: 8 %>
+    <% elsif defined? @create_new_pics %>
+      <%= link_to "?", new_collage_collage_pic_path(@collage), class: "position-link", position: 8 %>
+    <% else %>
+      <img src="" >
+    <% end %>
+  </div>
+  <div id="position_9" class="position">
+    <% if @collage_pics9.present? %>
+      <%= link_to image_tag(@collage_pics9.photos.pic.url(:medium)), edit_collage_collage_pic_path(@collage), class: "collage-pic", position: 9 %>
+    <% elsif defined? @create_new_pics %>
+      <%= link_to "?", new_collage_collage_pic_path(@collage), class: "position-link", position: 9 %>
+    <% else %>
+      <img src="" >
+    <% end %>
+  </div>
+</div>

@@ -19,6 +19,18 @@ class CollagesController < ApplicationController
   end
 
   def show
+    if @collage.user_id = current_user.id
+      @create_new_pics = "set"
+    end
+    @collage_pics1 = @collage.collage_pics.find_by_position(1)
+    @collage_pics2 = @collage.collage_pics.find_by_position(2)
+    @collage_pics3 = @collage.collage_pics.find_by_position(3)
+    @collage_pics4 = @collage.collage_pics.find_by_position(4)
+    @collage_pics5 = @collage.collage_pics.find_by_position(5)
+    @collage_pics6 = @collage.collage_pics.find_by_position(6)
+    @collage_pics7 = @collage.collage_pics.find_by_position(7)
+    @collage_pics8 = @collage.collage_pics.find_by_position(8)
+    @collage_pics9 = @collage.collage_pics.find_by_position(9)
   end
 
   def edit

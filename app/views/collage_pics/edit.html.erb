@@ -6,7 +6,7 @@
       <div class="collage-pic-select-div-inner">
         <%= image_tag(photo.pic.url(:medium), class: "collage-pic-select") %>
       </div><br />
-      <%= f.radio_button :photo_id, photo.id, class: "collage-radio-button" %>
+      <%= f.radio_button :photo_id, photo.id, class: "collage-radio-button", tag_value: @collage_pic.photo_id %>
       <%= f.hidden_field :position, value: @position %>
     </div>
   <% end %>
