@@ -2,7 +2,9 @@
   <h2 class="mem-title-splash">
     <%= link_to mem.title, mem, class: "mem-title-link" %>
   </h2>
-  <p class="mem-author"><%= mem.user.username %></p>
+  <p class="mem-author">
+    <%= mem.user.username %>
+    <%= link_to "Follow", "/follow" %></p>
   <div class="mems-previous-scroll">
     <div class="mems-inner-arrow">
       <

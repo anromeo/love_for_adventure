@@ -21,6 +21,7 @@ Love::Application.routes.draw do
   resources :bls
   get "admin/users/index"
 
+  match "/follow" => "dashboard#follow"
   devise_for :users
 
 

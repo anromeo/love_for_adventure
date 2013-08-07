@@ -52,6 +52,6 @@ group :test do
   gem 'database_cleaner', '~> 1.0.1'
   gem 'launchy'
   gem 'simplecov', :require => false
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_girl', '2.6.4'
   gem 'email_spec', '1.2.1'
 end

@@ -19,4 +19,14 @@ class DashboardController < ApplicationController
     end
     @dashboard = "set"
   end
+
+  def follow
+    render layout: false
+    params[:new]
+    @follower = Follower.new()
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 end
