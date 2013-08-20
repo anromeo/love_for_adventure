@@ -1,10 +1,12 @@
+<% current_following = Follower.where(follower: current_user.id, leader: mem.user_id) %>
+<% following =  current_following.blank? ? "Follow" : "Unfollow" %>
 <div class="mem-all-div">
   <h2 class="mem-title-splash">
     <%= link_to mem.title, mem, class: "mem-title-link" %>
   </h2>
   <p class="mem-author">
     <%= mem.user.username %>
-    <%= link_to "Follow", "/follow" %></p>
+    <%= link_to following, follow_path(leader: mem.user_id), target: "_new", remote: true  %></p>
   <div class="mems-previous-scroll">
     <div class="mems-inner-arrow">
       <

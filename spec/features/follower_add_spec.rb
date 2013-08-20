@@ -8,7 +8,7 @@ feature "add followers" do
 
   scenario "send a follow via memory" do
       sign_in_as!(user)
-      within(".mem"){ click_link "follow" }
+      within(".mem-all-div"){ click_link "Follow" }
       page.should have_content("following")
   end
   
