@@ -21,10 +21,10 @@ class DashboardController < ApplicationController
   end
 
   def follow
-    leader = params[:leader]
-    current_follower = Follower.where("follower = ? AND leader = ?", current_user.id, leader)
-    @follower = Follower.new(follower: current_user.id, leader: leader)
-    @leader = User.find_by_id(leader).username
+    @leader_id = params[:leader]
+    current_follower = Follower.where("follower = ? AND leader = ?", current_user.id, @leader_id)
+    @follower = Follower.new(follower: current_user.id, leader: @leader_id)
+    @leader = User.find_by_id(@leader_id).username
     respond_to do |format|
       if current_follower.blank?
         if @follower.save

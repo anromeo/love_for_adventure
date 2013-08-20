@@ -6,7 +6,7 @@
   </h2>
   <p class="mem-author">
     <%= mem.user.username %>
-    <%= link_to following, follow_path(leader: mem.user_id), target: "_new", remote: true  %></p>
+    <%= link_to following, follow_path(leader: mem.user_id), data: { leader: mem.user_id }, target: "_new", remote: true, class: "follow"  %></p>
   <div class="mems-previous-scroll">
     <div class="mems-inner-arrow">
       <

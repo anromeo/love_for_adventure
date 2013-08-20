@@ -1,1 +1,10 @@
-Follow <% %>?
+$(".follow").each(function(){
+  $this = $(this);
+  if($this.data("leader") == <%= @leader_id %>){
+    if($this.text() == "Follow"){
+      $this.text("Unfollow");
+    }else{
+      $this.text("Follow");
+    }
+  }
+});
