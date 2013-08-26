@@ -36,8 +36,10 @@ class DashboardController < ApplicationController
         current_follower.destroy_all
         @@message = "You are no longer following " + @leader
       end
-      flash[:message] = @@message
-      format.html{redirect_to following_path}
+      format.html do
+        flash[:message] = @@message
+        redirect_to following_path
+      end
       format.js
     end
   end
